@@ -1,0 +1,1581 @@
+/* =====================================================
+   SIAM HERITAGE
+   Thai Traditional Arts & Crafts Website
+===================================================== */
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --cream: #f5efe2;
+    --cream-light: #fbf8f0;
+
+    --brown: #4a2c22;
+    --brown-dark: #261712;
+
+    --red: #42332c;
+    --red-dark: #491902;
+
+    --gold: #c89b3c;
+    --gold-light: #e0bd68;
+
+    --green: #354936;
+
+    --text: #2b211d;
+    --muted: #786c63;
+
+    --border: #d8cdbb;
+
+    --white: #ffffff;
+
+    --max-width: 1200px;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+
+    font-family:  "courier", monospace;
+
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    height: 90px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--cream-light);
+
+    border-bottom: 1px solid var(--border);
+
+    position: relative;
+    z-index: 20;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    font-family: "courier", monospace;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+.logo span {
+    color: var(--gold);
+
+    font-family: "courier", monospace;
+
+    font-size: 1.4rem;
+
+    letter-spacing: 0;
+}
+
+
+/* NAV */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+nav a {
+    position: relative;
+
+    font-family: "courier", monospace;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    color: var(--brown);
+
+    transition: 0.3s ease;
+}
+
+nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--red);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+.section {
+
+    width: min(
+        var(--max-width),
+        90%
+    );
+
+    margin: auto;
+
+    padding: 110px 0;
+}
+
+.eyebrow {
+
+    margin-bottom: 15px;
+
+    font-family: "courier", monospace;
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.22em;
+
+    color: var(--red);
+}
+
+.thai-title {
+
+    margin-bottom: 10px;
+
+    color: var(--gold);
+
+    font-family: "courier", monospace;
+
+    font-size: 1.15rem;
+}
+
+h1,
+h2,
+h3 {
+
+    font-weight: 500;
+
+    color: var(--brown-dark);
+}
+
+h2 {
+
+    font-size:
+        clamp(
+            2.4rem,
+            5vw,
+            4.8rem
+        );
+
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+}
+
+h2 span {
+    color: var(--red);
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    font-family: "courier", monospace;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.btn:hover {
+
+    transform: translateY(-3px);
+}
+
+.btn-gold {
+
+    background: #b7ad98;
+
+    color: var(--brown-dark);
+}
+
+.btn-gold:hover {
+
+    background: var(--brown);
+
+    color: white;
+}
+
+.btn-outline {
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    color: white;
+}
+
+.btn-outline:hover {
+
+    background: white;
+
+    color: var(--brown-dark);
+}
+
+
+/* =====================================================
+   HOME HERO
+===================================================== */
+
+.hero {
+
+    min-height:
+        calc(
+            100vh - 90px
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        100px 8%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(35, 20, 15, 0.92),
+            rgba(45, 25, 17, 0.58),
+            rgba(0,0,0,0.15)
+        ),
+        url("images/hero.jpg")
+        center / cover
+        no-repeat;
+}
+
+
+/* Thai decorative pattern */
+
+.hero::before {
+
+    position: absolute;
+
+    right: 8%;
+    top: 12%;
+
+    color:
+        rgba(95, 55, 3, 0.5);
+
+    font-size: 12rem;
+
+    opacity: 0.25;
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+}
+
+.hero .eyebrow {
+
+    color: var(--gold-light);
+}
+
+.hero h1 {
+
+    margin-bottom: 30px;
+
+    color: white;
+
+    font-size:
+        clamp(
+            3.8rem,
+            8vw,
+            7.5rem
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: -0.055em;
+}
+
+.hero h1 span {
+
+    color: var(--gold-light);
+}
+
+.hero-description {
+
+    max-width: 570px;
+
+    margin-bottom: 35px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.82
+        );
+
+    font-size: 1.05rem;
+}
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+    align-items: end;
+}
+
+.intro-text {
+
+    max-width: 520px;
+
+    color: var(--muted);
+
+    font-size: 1.05rem;
+}
+
+.gold-link {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding-bottom: 5px;
+
+    border-bottom:
+        1px solid
+        var(--gold);
+
+    color: var(--red);
+
+    font-family: "courier", monospace;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    transition: 0.3s ease;
+}
+
+.gold-link:hover {
+
+    color: var(--gold);
+
+    border-color: var(--red);
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    margin-bottom: 50px;
+}
+
+
+/* =====================================================
+   CRAFT CARDS
+===================================================== */
+
+.craft-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.craft-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--brown);
+
+    color: white;
+}
+
+.craft-card img {
+
+    height: 500px;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.craft-card:hover img {
+
+    transform:
+        scale(1.06);
+}
+
+.craft-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(30,15,10,0.9),
+            transparent 60%
+        );
+}
+
+.craft-number {
+
+    position: absolute;
+
+    z-index: 3;
+
+    top: 20px;
+    right: 20px;
+
+    color: var(--gold-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.1em;
+}
+
+.craft-content {
+
+    position: absolute;
+
+    z-index: 3;
+
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+}
+
+.craft-content p {
+
+    margin-bottom: 7px;
+
+    color: var(--gold-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.15em;
+}
+
+.craft-content h3 {
+
+    margin-bottom: 8px;
+
+    color: white;
+
+    font-size: 2rem;
+}
+
+.craft-content span {
+
+    display: block;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   HERITAGE BANNER
+===================================================== */
+
+.heritage-banner {
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 10%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(50, 28, 20, 0.75),
+            rgba(50, 28, 20, 0.75)
+        ),
+        url("images/painting.jpg")
+        center / cover
+        no-repeat;
+}
+
+.heritage-banner h2 {
+
+    margin-bottom: 25px;
+
+    color: white;
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            6rem
+        );
+}
+
+.heritage-banner > div {
+
+    max-width: 750px;
+}
+
+.heritage-banner p:last-child {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.page-header {
+
+    padding:
+        130px 8%
+        120px;
+
+    background: var(--brown-dark);
+
+    color: white;
+}
+
+.page-header h1 {
+
+    max-width: 900px;
+
+    color: white;
+
+    font-size:
+        clamp(
+            3.7rem,
+            8vw,
+            7rem
+        );
+
+    line-height: 0.92;
+
+    letter-spacing: -0.055em;
+}
+
+.page-header h1 span {
+
+    color: var(--gold-light);
+}
+
+.page-header > p:last-child {
+
+    max-width: 570px;
+
+    margin-top: 30px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+
+    font-size: 1.05rem;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-story {
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr 0.95fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.about-image {
+
+    height: 680px;
+
+    position: relative;
+}
+
+.about-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -18px;
+    left: -18px;
+
+    width: 100%;
+    height: 100%;
+
+    border:
+        1px solid
+        var(--gold);
+
+    z-index: 0;
+}
+
+.about-image img {
+
+    position: relative;
+
+    height: 100%;
+
+    z-index: 1;
+}
+
+.about-content h2 {
+
+    margin-bottom: 30px;
+}
+
+.about-content > p:not(.eyebrow) {
+
+    max-width: 520px;
+
+    margin-bottom: 20px;
+
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   VALUES
+===================================================== */
+
+.values {
+
+    border-top:
+        1px solid
+        var(--border);
+}
+
+.value-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 45px;
+}
+
+.value {
+
+    padding-top: 25px;
+
+    border-top:
+        2px solid
+        var(--gold);
+}
+
+.value-icon {
+
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 2rem;
+}
+
+.value > span {
+
+    font-family: Arial, sans-serif;
+
+    color: var(--red);
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+}
+
+.value h3 {
+
+    margin:
+        12px 0;
+
+    font-size: 2rem;
+}
+
+.value p {
+
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote-section {
+
+    padding:
+        130px 10%;
+
+    text-align: center;
+
+    background:
+        var(--red);
+
+    color: white;
+}
+
+.quote-section .thai-title {
+
+    color: var(--gold-light);
+}
+
+.quote-section blockquote {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            4rem
+        );
+
+    line-height: 1.15;
+}
+
+
+/* =====================================================
+   DISCOVER GRID
+===================================================== */
+
+.discover {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    grid-auto-rows: 480px;
+
+    gap: 25px;
+}
+
+.discover-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+.discover-item img {
+
+    height: 100%;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.discover-item:hover img {
+
+    transform:
+        scale(1.07);
+}
+
+.discover-item::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(25,12,8,0.95),
+            transparent 65%
+        );
+}
+
+.discover-large {
+
+    grid-row: span 2;
+}
+
+.discover-info {
+
+    position: absolute;
+
+    z-index: 3;
+
+    left: 35px;
+    right: 35px;
+    bottom: 35px;
+}
+
+.discover-info > span {
+
+    color: var(--gold-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.15em;
+}
+
+.discover-info h2 {
+
+    margin: 8px 0;
+
+    color: white;
+
+    font-size: 2.5rem;
+}
+
+.discover-info p {
+
+    max-width: 500px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+}
+
+.round-button {
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.6
+        );
+
+    border-radius: 50%;
+
+    transition: 0.3s ease;
+}
+
+.round-button:hover {
+
+    background: var(--gold);
+
+    color: var(--brown-dark);
+
+    border-color: var(--gold);
+}
+
+
+/* =====================================================
+   MATERIAL SECTION
+===================================================== */
+
+.material-section {
+
+    min-height: 550px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 10%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(38,23,18,0.95),
+            rgba(38,23,18,0.6)
+        ),
+        url("images/pottery.jpg")
+        center / cover
+        no-repeat;
+
+    color: white;
+}
+
+.material-content {
+
+    max-width: 650px;
+}
+
+.material-content h2 {
+
+    margin-bottom: 25px;
+
+    color: white;
+}
+
+.material-content h2 span {
+
+    color: var(--gold-light);
+}
+
+.material-content p:last-child {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    grid-auto-rows: 300px;
+
+    gap: 20px;
+}
+
+.gallery-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--brown);
+}
+
+.gallery-item img {
+
+    height: 100%;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.gallery-item:hover img {
+
+    transform: scale(1.06);
+
+    filter:
+        brightness(0.7);
+}
+
+.gallery-feature {
+
+    grid-column: span 2;
+
+    grid-row: span 2;
+}
+
+.gallery-tall {
+
+    grid-row: span 2;
+}
+
+.gallery-caption {
+
+    position: absolute;
+
+    z-index: 3;
+
+    left: 25px;
+    right: 25px;
+    bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        0.4s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.gallery-caption span {
+
+    color: var(--gold-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.7rem;
+}
+
+.gallery-caption h3 {
+
+    color: white;
+
+    font-size: 1.4rem;
+}
+
+
+/* =====================================================
+   GALLERY CTA
+===================================================== */
+
+.gallery-cta {
+
+    padding:
+        130px 10%;
+
+    text-align: center;
+
+    background:
+        var(--brown);
+
+    color: white;
+}
+
+.gallery-cta h2 {
+
+    margin-bottom: 35px;
+
+    color: white;
+}
+
+.gallery-cta h2 span {
+
+    color: var(--gold-light);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding:
+        60px 5%
+        25px;
+
+    background:
+        var(--brown-dark);
+
+    color: white;
+}
+
+.footer-inner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding-bottom: 45px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+}
+
+.footer-brand p {
+
+    max-width: 350px;
+
+    margin-top: 15px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    font-size: 0.9rem;
+}
+
+.footer-links {
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+}
+
+.footer-links a {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+
+    color: var(--gold-light);
+}
+
+.copyright {
+
+    padding-top: 20px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.35
+        );
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        padding:
+            0 4%;
+    }
+
+    nav {
+
+        gap: 18px;
+    }
+
+    .intro,
+    .about-story {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .craft-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .craft-card:last-child {
+
+        grid-column:
+            span 2;
+    }
+
+    .value-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gallery-feature {
+
+        grid-column:
+            span 2;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    nav {
+
+        gap: 14px;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    nav a {
+
+        font-size: 0.65rem;
+    }
+
+    .hero {
+
+        min-height: 85vh;
+
+        padding:
+            80px 7%;
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                3.3rem,
+                16vw,
+                5rem
+            );
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .section {
+
+        padding:
+            75px 0;
+    }
+
+    .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .craft-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .craft-card:last-child {
+
+        grid-column: auto;
+    }
+
+    .craft-card img {
+
+        height: 400px;
+    }
+
+    .page-header {
+
+        padding:
+            90px 7%;
+    }
+
+    .page-header h1 {
+
+        font-size:
+            clamp(
+                3.3rem,
+                15vw,
+                5rem
+            );
+    }
+
+    .about-image {
+
+        height: 450px;
+    }
+
+    .about-image::before {
+
+        top: -10px;
+        left: -10px;
+    }
+
+    .value-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .discover {
+
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 420px;
+    }
+
+    .discover-large {
+
+        grid-row: auto;
+    }
+
+    .discover-info h2 {
+
+        font-size: 2rem;
+    }
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 300px;
+    }
+
+    .gallery-feature {
+
+        grid-column: auto;
+
+        grid-row: auto;
+    }
+
+    .gallery-tall {
+
+        grid-row: auto;
+    }
+
+    .gallery-caption {
+
+        opacity: 1;
+
+        transform: none;
+    }
+
+    .footer-inner {
+
+        flex-direction: column;
+    }
+
+    .footer-links {
+
+        flex-wrap: wrap;
+    }
+
+}
